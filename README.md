@@ -6,6 +6,8 @@ Requisites
 - Docker
 - Docker-compose
 
+## Project configuration
+
 First, clone the docker project:
 
 [https://github.com/LFTroya/laravel-docker.git]
@@ -23,10 +25,16 @@ After `docker-compose` finished. Make sure the configuration is OK visiting
 
 That's all. You can now start developing your site!
 
-**Things to consider:**
+## Things to consider:
 
 Make sure you don't have the following ports in use: `5432`, `8001`, `80` and `6379`. 
 To see if docker is using any of your ports, use `docker ps`
+
+**Composer** is available inside of the container. If you want to access to it, you
+need to enter on it. On `laravel-docker` directory, execute `docker-compose exec app bash`.
+This follows the name of the services on `docker-compose` file.
+
+**Node and npm** are also available on the container as `composer`.
 
 **Postgres** creates an initial db to use `postgres`. The credentials
 are the following: 
