@@ -23,6 +23,22 @@ postgres, nginx and app. Feel free to use all of them.
 After `docker-compose` finished. Make sure the configuration is OK visiting
 [http://localhost:8001]. You should see the laravel home page.
 
+Finally, configure laravel to use the configuration:
+
+- Copy `.env.example` to `.env`
+- Install dependencies `composer install`
+- Generate key `php artisan key:generate`
+- Update .env and setting connection to postgres
+
+```
+ DB_CONNECTION=pgsql
+ DB_HOST=postgres
+ DB_PORT=5432
+ DB_DATABASE=postgres
+ DB_USERNAME=root
+ DB_PASSWORD=secret
+```
+
 That's all. You can now start developing your site!
 
 ## Things to consider:
